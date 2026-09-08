@@ -1,0 +1,115 @@
+#root {
+    min-height: 100vh;
+}
+
+.app {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.app h1 {
+    margin: 0 0 30px;
+    text-align: center;
+    font-size: 36px;
+    color: #111827;
+}
+
+.lista-produtos {
+    margin-top: 40px;
+}
+
+.lista-produtos h2 {
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.lista-produtos ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.produto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.produto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.produto-nome {
+    font-size: 18px;
+    font-weight: bold;
+    color: #111827;
+}
+
+.produto-detalhes {
+    color: #6b7280;
+}
+
+.produto-acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.produto-acoes button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-editar {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.btn-editar:hover {
+    background-color: #d1d5db;
+}
+
+.btn-excluir {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.btn-excluir:hover {
+    background-color: #fecaca;
+}
+
+@media (max-width: 600px) {
+    .app {
+        padding: 25px 15px;
+    }
+
+    .app h1 {
+        font-size: 28px;
+    }
+
+    .produto {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .produto-acoes {
+        justify-content: flex-end;
+    }
+}
