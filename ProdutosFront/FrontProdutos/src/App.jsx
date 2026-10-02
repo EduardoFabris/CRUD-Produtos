@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import { useProdutos } from './Hooks/useProdutos';
-import Formulario from "./components/Formulario";
+import Formulario from "./Components/Formulario";
 
 function App() {
 
