@@ -6,6 +6,12 @@ export async function buscarProdutos() {
     return resposta.data;
 }
 
+export async function buscarProdutoPorId(id) {
+    const resposta = await api.get(`/produtos/${id}`);
+
+    return resposta.data;
+}
+
 export async function criarProduto(produto) {
     const resposta = await api.post("/produtos", produto);
 
