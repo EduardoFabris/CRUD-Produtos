@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useProdutos } from "../Hooks/useProdutos";
+import { useContext } from "react";
+import { ProdutoContext } from "../context/ProdutoContext";
 import Formulario from "../components/Formulario";
 import "./Produtos.css";
 
@@ -7,7 +8,7 @@ function Produtos() {
 
     const [produtoEmEdicao, setProdutoEmEdicao] = useState(null);
 
-    const { produtos, adicionaProduto, atualizaProduto, removeProduto, loading, erro } = useProdutos();
+    const { produtos, removeProduto, loading, erro } = useContext(ProdutoContext);
 
     if (loading) {
         return <p>Carregando produtos...</p>;
@@ -20,7 +21,7 @@ function Produtos() {
     return (
         <div className="produtos">
             <h1> Cadastro de Produtos </h1>
-            <Formulario key={produtoEmEdicao?.id ?? "novo"} produtoEmEdicao={produtoEmEdicao} atualizaProduto={atualizaProduto} adicionaProduto={adicionaProduto} />
+            <Formulario key={produtoEmEdicao?.id ?? "novo"} produtoEmEdicao={produtoEmEdicao} />
 
             <section className="lista-produtos">
                 <h2>Produtos Cadastrados</h2>

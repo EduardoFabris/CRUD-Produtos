@@ -1,8 +1,19 @@
 import { useState } from "react";
+import { useContext } from "react";
+import { ProdutoContext } from "../context/ProdutoContext";
 import { criarProduto } from "../api/produtosApi";
 import "./Formulario.css";
 
-const Formulario = ({adicionaProduto,produtoEmEdicao,atualizaProduto}) => {
+const Formulario = ({produtoEmEdicao}) => {
+
+    //adicionaProduto e atualizaProduto vem do Context (Context ta compartilhando a lógica do Hook useProdutos pro componente do formulário)
+    /*
+        ProdutoEmEdição continua sendo passado como Prop porque sua lógica é do próprio formulário, não do useProdutos...
+        é um estado de formulário controlado pela página de Produtos.jsx (Produtos diz ao Form qual produto está sendo editado)
+    */
+    const { adicionaProduto, atualizaProduto } = useContext(ProdutoContext);
+
+    console.log("Context:", { adicionaProduto, atualizaProduto });
 
     const [formulario, setFormulario] = useState(() => ({
 		// "?" = se existe produtoEmEdicao nome recebe nome - "??" = Se não existe nome recebe string vazia  
